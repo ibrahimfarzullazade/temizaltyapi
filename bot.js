@@ -16,10 +16,10 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 fs.readdir('./komutlar/', (err, files) => {
   if (err) console.error(err);
-  log(`${files.length} komut yüklenecek.`);
+  log(`${files.length} komut yÃ¼klenecek.`);
   files.forEach(f => {
     let props = require(`./komutlar/${f}`);
-    log(`Yüklenen komut: ${props.help.name}.`);
+    log(`YÃ¼klenen komut: ${props.help.name}.`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
@@ -48,9 +48,9 @@ client.reload = command => {
 };
 
 client.on('guildBanAdd' , (guild, user) => {
-  let aramızakatılanlar = guild.channels.find('name', 'aramıza-katılanlar');
-  if (!aramızakatılanlar) return;
-  aramızakatılanlar.send('https://media.giphy.com/media/8njotXALXXNrW/giphy.gif **Adalet dağıtma zamanı gelmiş!** '+ user.username +'**Bakıyorum da suç işlemiş,Yargı dağıtmaya devam** :fist: :writing_hand:  :spy:' );
+  let aramÃ½zakatÃ½lanlar = guild.channels.find('name', 'aramÃ½za-katÃ½lanlar');
+  if (!aramÃ½zakatÃ½lanlar) return;
+  aramÃ½zakatÃ½lanlar.send('https://media.giphy.com/media/8njotXALXXNrW/giphy.gif **Adalet daÃ°Ã½tma zamanÃ½ gelmiÃ¾!** '+ user.username +'**BakÃ½yorum da suÃ§ iÃ¾lemiÃ¾,YargÃ½ daÃ°Ã½tmaya devam** :fist: :writing_hand:  :spy:' );
 });
 
 client.load = command => {
@@ -86,7 +86,7 @@ client.unload = command => {
 
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sa') {
-      msg.reply('Aleyküm Selam Hoşgeldin !');
+      msg.reply('AleykÃ¼m Selam HoÃ¾geldin !');
 }
 });
 
